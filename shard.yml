@@ -1,0 +1,13 @@
+name: charlie
+version: 0.1.0
+
+authors:
+  - your-name-here <cdneal091@gmail.com>
+
+targets:
+  charlie:
+    main: src/charlie.cr
+
+crystal: 0.31.1
+
+license: MIT
