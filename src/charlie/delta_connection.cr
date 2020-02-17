@@ -3,7 +3,7 @@ class Charlie
     socket = HTTP::WebSocket.new("0.0.0.0", "/", port: 9002)
 
     socket.on_message do |message|
-      handle_update message
+      puts message
     end
 
     spawn do
