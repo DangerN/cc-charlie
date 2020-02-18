@@ -2,9 +2,9 @@ class Charlie
   def self.kemal_config
     ws "/" do |socket|
       @@subscribers.push socket
-
+      puts "Socket opened: #{socket}"
       socket.on_message do |message|
-        socket.send "handle_message(message, socket).to_json"
+        socket.send handle_message(message, socket).to_json
       end
 
       socket.on_close do |_|

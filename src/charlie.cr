@@ -2,6 +2,12 @@ require "cc-alpha"
 require "kemal"
 require "./charlie/*"
 
+module Alpha
+  def self.boards=(boards)
+    @@boards = boards
+  end
+end
+
 class Charlie
   VERSION = "0.1.0"
 
