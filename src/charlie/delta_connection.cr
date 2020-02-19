@@ -4,8 +4,8 @@ class Charlie
 
     socket.on_message do |message|
 
-      puts JSON.parse(message).as_h.transform_values { |board| Alpha::Board.from_json(board.to_json) }
-      
+      Alpha.boards = JSON.parse(message).as_h.transform_values { |board| Alpha::Board.from_json(board.to_json) }
+
     end
 
     spawn do
