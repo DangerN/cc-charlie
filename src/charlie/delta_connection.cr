@@ -5,7 +5,10 @@ class Charlie
     socket.on_message do |message|
 
       Alpha.boards = JSON.parse(message).as_h.transform_values { |board| Alpha::Board.from_json(board.to_json) }
-
+      @@subscribers.each do |subscriber|
+        message = {"type"=> "fullImage", "image"=> Alpha.boards}.to_json
+        subscriber.send message
+      end
     end
 
     spawn do
